@@ -1,0 +1,55 @@
+// Switches 
+#include <iostream>
+#include <cmath>
+int main()
+{
+
+//int = interger
+// double = decimal
+// char = single character 
+// bool = true or false
+// std::string = name 
+
+// useful math functions 
+/*
+
+std::max(y, x); - finds greater number 
+std::min(y, x); - finds least greatest number
+z = pow(2, 4); - power
+z = sqrt(9); - square root
+z = abs(-1); - how far from 0
+z = round(x); - round down 
+z = ceil(x); - round up
+z = floor(x) - also round down
+*/
+
+char grade;
+std::cout << "Enter a Grade ( A - F ) >" << std::endl;
+std::cin >> grade;
+
+switch(grade){
+  
+  case 'A':
+  std::cout << "You Did Amazing!";
+  break;
+  case 'B':
+  std::cout << "You Did Great!";
+  break;
+  case 'C':
+  std::cout << "You Did Kind Of Good";
+  break;
+  case 'D':
+  std::cout << "You Didnt Do So Well";
+  break;
+  case 'F':
+  std::cout << "YOU FAILED LOL!";
+  break;
+  default:
+  std::cout << "Please Enter a Capital Letter (A - F)";
+   
+
+}
+
+    return 0;
+
+}
