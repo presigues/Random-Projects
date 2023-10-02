@@ -1,0 +1,104 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Project/Maven2/JavaApp/src/main/java/${packagePath}/${mainClassName}.java to edit this template
+ */
+
+package com.mycompany.vidgame;
+
+import java.awt.*;
+import javax.swing.*;
+import java.awt.event.*;
+import java.util.Random;
+
+/**
+ *
+ * @author pres2590
+ */
+public class Vidgame extends JPanel implements ActionListener {
+    
+     Timer time = new Timer(5, this);
+    int x = 35;
+    int speed = 1;
+    String epic = "a";
+   
+     Random rand = new Random();
+        
+        
+        int n = rand.nextInt(4);
+    
+      public void paint(Graphics g){
+          
+          
+          
+          // color gen
+          
+        
+        
+        if(n == 1){
+           this.setBackground(Color.CYAN);
+        }
+             if(n == 2){
+           this.setBackground(Color.RED);
+        }
+                 if(n == 3){
+           this.setBackground(Color.GREEN);
+        }
+                     if(n == 4){
+           this.setBackground(Color.MAGENTA);
+        }
+                     
+        super.paint(g);
+          
+        int count = 0;
+          g.setColor(Color.DARK_GRAY);
+           g.fillRect(x, 500, 25, 35);
+           System.out.println("X cooridinate:"+x);
+           
+           g.drawString("Watch a block go across the screen forever simulator", 800, 300);
+           time.start();
+           
+        
+           
+           
+  
+      }
+      
+    public void actionPerformed(ActionEvent e){
+        
+        int noice = 1;
+        
+        if(x >= 0 && x < 1895 && epic.equals("a")){
+            x = x + speed;
+            repaint();
+            if (x == 1895){
+                epic = ("b");
+                
+                
+            } 
+   }
+
+        
+        if (x > 0 && x <= 1895 && epic.equals("b")){
+            x = x - speed;
+            repaint();
+              if(x == 0){
+                epic = ("a");
+                
+            }
+        }
+        
+    
+        
+    }
+    
+
+   public static void main(String[] args) {
+        
+         JFrame f = new JFrame("Test");
+        f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        f.getContentPane().add(new Vidgame());
+        f.setSize(290, 300);
+        f.setLocation(550, 30);
+        f.setVisible(true);
+    }
+}
